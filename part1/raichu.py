@@ -1311,8 +1311,8 @@ def find_best_move(board, N, player, timelimit):
     
     board2D = conv_2D(board, N)
     
-    print('Initial')
-    print(board2D)
+    #print('Initial')
+    #print(board2D)
     
     while True:
         #time.sleep(1)
