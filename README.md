@@ -1,11 +1,16 @@
-# ansangem-vkashir-hripb-a2
+# ansangem-hripb-vkashir-a2
 
 REPORT AND WORKFLOW- A2
 
 ## PART1:
 
 ### Workflow:
+The main motto for this problem is to design an approach that calculates the next best move for the given player to win the game.
+We started to solve the given problem by forming successor states for all the given pieces on the board. From pichus moving diagonally to pikachus travelling in a straight fashion and not to forgot the time we spent in calculating successor states for raichu. It took us a lot of time to do it. But, in the end we are glad it worked out. After designing the successor states for the given player, we had to implement an algorithm that can back track it's steps from the desired goal state of winning to it's given current state. We realized it has to be somewhat related Adversarial search or a local search for games like this. We also realized that it is min-max algorithm that can solve the problem at hand. 
 
+In order to do this, we required a lot of materials in action. We started with evaluating any given new successor state of how well it is. So, we decided to give it score, which we in our program call it 'reward' (cost). This cost or certain number of points is based on the pieces the board has and particularly calculating the points on the boards in favour of the the player's piece colour that has to win later. We decided to assign pichu's with one point, pikachu's with 2 points and finally raichu's with 3 points (maybe since we felt like it can go as both pichu and pikachu combined :o, but seriously three points were enough, we could have taken 5 points for it or even more but it looked like the solution at hand appears with the above mentioned numbers as well. So, we finally decided to come up with these number after a heating debate). After, this we also decided with having a seperate function that tells us if the state has reached a point where it has won the game or not. With this in mind, we assigned the whole score to be incremented with 99999.
+
+Lastly, it was the point for the main ingredient for the recipe to succeed, and that was min-max algorithm, we had to know the number of levels it has travel, in order to to compute min-cost and max-cost to the given successor state. We used heapq data structure, wherein using max-heap in more specific and popping the top most element to count or compute. The algorithm was made much faster thanks to alpha-beta pruning approach.
 
 #### Search Abstraction:
 1) Successor states: There are at most 4 possible legal ways for pichu to traverse across any given state diagonally. Simillarly for pikachu, it can travel 15 different ways including the opponent pieces it has to jump over. Lastly, raichu is the best one! Raichu can alone have more successor states combined that of pichu and pikachu - travelling diagonally and no limits on the empty spaces between jumped pieces gives it a lot of states to cover.
@@ -13,7 +18,9 @@ REPORT AND WORKFLOW- A2
 3) Cost function: We have designed the given problem using min-max algorithm and later optimized it by alpha-beta pruning approach in order to reduce time taken by our implemented algorithm. We have used variables such as rewards and cost that calculates and awards for the pieces on the board present given a specific number of points for that individual piece. Later, subtracting the scores from the opponent player's pieces score to get the whole score for that particular given successor state.
 
 #### Challenges faced:
-1) 
+1) We had to work on different successor states for different pieces and most of the times it was not going as planned. Also, to communicate with different methods from different members on the same team made it a bit more challenging and time consuming task. Later, we did decide to go on one method which appealed to all and by getting the most accurate results required.
+2) We were not familar with a certain method that could be used in such a way that can backtrack using min-max, but later with thorough investigating and research we found the best to go with heapq (max-heap)
+3) To complete the given task with a time-limit, was challenging, later with the help of alpha-beta pruning made it much better and easier with a lot less of total computations required to solve the given problem with a similar approach.
 
 #### Notable Observations:
 1) The given min-max algorithm takes a lot of time to calculate costs, since it manually calculates for all at a single time. So, using alpha-beta prining indeed saved us a lot of time.
