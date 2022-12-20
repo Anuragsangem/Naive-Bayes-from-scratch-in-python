@@ -1191,13 +1191,13 @@ def cost_calc(board_succ, player):
                     elif(j == 'W'):
                         reward_white += 2
                     elif(j == '@'):
-                        reward_white += 3
+                        reward_white += N
                     elif(j == 'b'):
                         reward_white -= 1
                     elif(j == 'B'):
                         reward_white -= 2
                     elif(j == '$'):
-                        reward_white -= 3
+                        reward_white -= N
                         
         elif player == 'b':
             for i in board_succ:
@@ -1207,13 +1207,13 @@ def cost_calc(board_succ, player):
                     elif(j == 'W'):
                         reward_black -= 2
                     elif(j == '@'):
-                        reward_black -= 3
+                        reward_black -= N
                     elif(j == 'b'):
                         reward_black += 1
                     elif(j == 'B'):
                         reward_black += 2
                     elif(j == '$'):
-                        reward_black += 3
+                        reward_black += N
                         
     if player == 'w':
         return reward_white
