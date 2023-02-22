@@ -6,7 +6,7 @@
 
 # SeekTruth.py : Classify text objects into two categories
 #
-# Anurag Sangem [ansangem] , Diwakar Reddy [vkashir], Hritik P (hripb)
+# Anurag Sangem [ansangem] 
 #
 # Based on skeleton code by D. Crandall, October 2021
 #
